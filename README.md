@@ -7,6 +7,7 @@
 <h3> Qompass AI on Go </h3>
 
 ![Repository Views](https://komarev.com/ghpvc/?username=qompassai-go)
+![GitHub all releases](https://img.shields.io/github/downloads/qompassai/go/total?style=flat-square)
   <a href="https://go.dev/">
   <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go">
 </a>
