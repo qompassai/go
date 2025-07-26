@@ -1,6 +1,7 @@
-<!-- /qompassai/go/README.md -->
-<!-- ---------------------------- -->
+<!-- -----------/qompassai/go/README.md ------------------>
+<!----------------Qompass AI on Go-Lang ------------------>
 <!-- Copyright (C) 2025 Qompass AI, All rights reserved -->
+<!-- -------------------------------------------------- -->
 
 <h2> Go-lang: For microservices </h2>
 
@@ -23,10 +24,156 @@
   <a href="./LICENSE-QCDA"><img src="https://img.shields.io/badge/license-Q--CDA-lightgrey.svg" alt="License: Q-CDA"></a>
 </p>
 
+<details> 
+  <summary style="font-size: 1.4em; font-weight: bold; padding: 15px; background: #375eab; color: white; border-radius: 10px; cursor: pointer; margin: 10px 0;">
+    <strong> <img src="https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Blue.png" alt="Go Logo" style="height: 1.2em; vertical-align: -0.2em; margin-right: 0.25em;" /> Qompass AI Go Solutions </strong> 
+  </summary> 
+  <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; margin-top: 10px; font-family: monospace;">
+
+* [Qompass ADNS](https://github.com/qompassai/adns)
+* [Qompass Azimuth](https://github.com/qompassai/azimuth)
+* [Qompass Beacon](https://github.com/qompassai/beacon)
+* [Qompass Go Template](https://github.com/qompassai/gtemplate)
+* [Qompass Rose](https://github.com/qompassai/rose)
+* [Qompass Sherpadoc](https://github.com/qompassai/sherpadoc)
+* [Qompass Sherpats](https://github.com/qompassai/Sherpats)
+
+    </div>
+  </details>
 
 <details>
-<summary style="font-size: 1.4em; font-weight: bold; padding: 15px; background: #667eea; color: white; border-radius: 10px; cursor: pointer; margin: 10px 0;"><strong>🐹 How to Use Qompass AI Go</strong></summary>
-<blockquote style="font-size: 1.2em; line-height: 1.8; padding: 25px; background: #f8f9fa; border-left: 6px solid #667eea; border-radius: 8px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <summary style="font-size: 1.4em; font-weight: bold; padding: 15px; background: #667eea; color: white; border-radius: 10px; cursor: pointer; margin: 10px 0;">
+    <strong>▶️ Qompass AI Quick Start</strong>
+  </summary>
+  <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; margin-top: 10px; font-family: monospace;">
+
+```sh
+curl -fSsL https://raw.githubusercontent.com/qompassai/go/main/scripts/quickstart.sh | sh
+```
+  </div>
+  <blockquote style="font-size: 1.2em; line-height: 1.8; padding: 25px; background: #f8f9fa; border-left: 6px solid #667eea; border-radius: 8px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <details>
+      <summary style="font-size: 1em; font-weight: bold; padding: 10px; background: #e9ecef; color: #333; border-radius: 5px; cursor: pointer; margin: 10px 0;">
+        <strong>📄 We STRONGLY advise you read the script BEFORE running it 😉</strong>
+      </summary>
+      <pre style="background: #fff; padding: 15px; border-radius: 5px; border: 1px solid #ddd; overflow-x: auto;">
+#!/usr/bin/env sh
+# /qompassai/go/scripts/quickstart.sh
+# Qompass AI Go Quick Start
+# Copyright (C) 2025 Qompass AI, All rights reserved
+########################################################
+set -eu
+GO_VERSION="go1.24.5"
+GO_TOOLS="
+github.com/bradfitz/apicompat@latest
+github.com/canha/golang-tools-install-script@latest
+golang.org/x/tools/cmd/stringer@latest
+github.com/go-delve/delve/cmd/dlv@latest
+github.com/go-swagger/go-swagger/cmd/swagger@latest
+github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+github.com/mitchellh/gox@latest
+github.com/securego/gosec/v2/cmd/gosec@latest
+github.com/getsops/sops/v3/cmd/sops@latest
+github.com/vektra/mockery/v2@latest
+golang.org/x/tools/cmd/goimports@latest
+golang.org/x/tools/gopls@latest
+honnef.co/go/tools/cmd/staticcheck@latest
+golang.org/x/tools/go/analysis/passes/buildssa@latest
+golang.org/x/tools/cmd/gonew@latest
+google.golang.org/protobuf/cmd/protoc-gen-go@latest
+google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+github.com/cloudflare/circl/cmd/circl@latest
+github.com/crazy-max/xgo@latest
+github.com/hexops/zgo/cmd/zgo@latest
+golang.org/x/text/cmd/gotext@latest
+"
+LOCAL_PREFIX="$HOME/.local"
+BIN_DIR="${LOCAL_PREFIX}/bin"
+CONFIG_DIR="$HOME/.config/go"
+GOPATH="${HOME}/.go"
+GOBIN="${GOPATH}/bin"
+GOCACHE="${HOME}/.cache/go-build"
+GOMODCACHE="${HOME}/.cache/go-mod"
+GOENV="${HOME}/.config/go/env"
+export GOPATH GOBIN GOCACHE GOMODCACHE GOENV
+mkdir -p "$BIN_DIR" "$CONFIG_DIR" "$GOBIN" "$GOCACHE" "$GOMODCACHE"
+PATH="$BIN_DIR:$GOBIN:$PATH"
+export PATH
+print_info()  { printf "\033[0;32m[INFO]\033[0m %s\n" "$1"; }
+print_warn()  { printf "\033[0;33m[WARN]\033[0m %s\n" "$1"; }
+print_error() { printf "\033[0;31m[ERROR]\033[0m %s\n" "$1" >&2; }
+command_exists() { command -v "$1" >/dev/null 2>&1; }
+echo '╭────────────────────────────────────────────╮'
+echo '│       Qompass AI Go Quickstart             │'
+echo '╰────────────────────────────────────────────╯'
+echo "   (c) 2025 Qompass AI. All rights reserved"
+echo
+NEEDED_TOOLS="git curl tar make clang bash"
+MISSING=""
+for tool in $NEEDED_TOOLS; do
+  if ! command_exists "$tool"; then
+    if [ -x "/usr/bin/$tool" ]; then
+      ln -sf "/usr/bin/$tool" "$BIN_DIR/$tool"
+      echo " → Added symlink for $tool in $BIN_DIR (not originally in PATH)"
+    else
+      MISSING="$MISSING $tool"
+    fi
+  fi
+done
+if [ -n "$MISSING" ]; then
+  print_error "The following tools are missing: $MISSING"
+  echo "Please install them with your package manager to continue."
+  exit 1
+fi
+if ! command_exists gvm; then
+  print_info "GVM not found. Installing GVM for per-user Go versioning..."
+  # POSIX shell doesn't support process substitution.
+  curl -sSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer -o /tmp/gvm-installer.sh
+  sh /tmp/gvm-installer.sh
+  rm -f /tmp/gvm-installer.sh
+fi
+if [ -f "$HOME/.gvm/scripts/gvm" ]; then
+  . "$HOME/.gvm/scripts/gvm"
+else
+  print_error "GVM install failed (or $HOME/.gvm/scripts/gvm missing)"
+  exit 1
+fi
+if ! gvm list | grep -q "$GO_VERSION"; then
+  print_info "Installing Go toolchain $GO_VERSION via gvm (this may take a few minutes)..."
+  gvm install "$GO_VERSION" --prefer-binary || gvm install "$GO_VERSION"
+fi
+gvm use "$GO_VERSION" --default || {
+  print_error "Failed to switch Go version using gvm (check your install)."
+  exit 1
+}
+print_info "Active Go version: $(go version)"
+TOOLS_COUNT=$(printf "%s\n" "$GO_TOOLS" | grep -c .)
+print_info "Installing Go CLI tools ($TOOLS_COUNT)..."
+echo "$GO_TOOLS" | while IFS= read -r tool; do
+  [ -z "$tool" ] && continue
+  print_info "Installing: $tool"
+  if go install "$tool"; then
+    print_info "Installed $tool ✅"
+  else
+    print_warn "Failed to install $tool ❌"
+  fi
+done
+for extra in zig clang lld llvm; do
+  if ! command_exists "$extra"; then
+    print_warn "$extra not found - some advanced/cross features may be unavailable."
+  fi
+done
+echo
+print_info "✅ Go development environment for Qompass AI projects is READY!"
+print_info "→ Please add the following to your shell rc if not already present:"
+echo "   export PATH=\"$BIN_DIR:$GOBIN:\$PATH\""
+print_info "Run \`gvm use $GO_VERSION\` in new shells or add to your rc/init if needed."
+print_info "Ready, Set, Go!"
+exit 0
+</pre> </details> <p>Or, <a href="https://github.com/qompassai/go/blob/main/scripts/quickstart.sh" target="_blank">View the quickstart script</a>.</p>
+
+  </blockquote>
+</details>
 
 </blockquote>
 </details>
@@ -129,7 +276,7 @@
 **Monero (XMR):**
 
 <div align="center">
-  <img src="./assets/monero-qr.png" alt="Monero QR Code" width="180">
+  <img src="https://www.github.com/qompassai/svg/assets/monero-qr.svg" alt="Monero QR Code" width="180">
 </div>
 
 <div style="margin: 10px 0;">
@@ -161,66 +308,66 @@
 ## Forward Propagation Algorithm
 
 $$
-y = w_1x_1 + w_2x_2 + ... + w_nx_n + b
+y = w\_1x\_1 + w\_2x\_2 + ... + w\_nx\_n + b
 $$
 
 Where:
 
-- $y$ represents the model output
-- $(x_1, x_2, ..., x_n)$ are input features
-- $(w_1, w_2, ..., w_n)$ are feature weights
-- $b$ is the bias term
+* $y$ represents the model output
+* $(x\_1, x\_2, ..., x\_n)$ are input features
+* $(w\_1, w\_2, ..., w\_n)$ are feature weights
+* $b$ is the bias term
 
 ### Neural Network Activation
 
 For neural networks, the bias term is incorporated before activation:
 
 $$
-z = \\sum\_{i=1}^{n} w_ix_i + b
+z = \sum\_{i=1}^{n} w\_ix\_i + b
 $$
 $$
-a = \\sigma(z)
+a = \sigma(z)
 $$
 
 Where:
 
-- $z$ is the weighted sum plus bias
-- $a$ is the activation output
-- $\\sigma$ is the activation function
+* $z$ is the weighted sum plus bias
+* $a$ is the activation output
+* $\sigma$ is the activation function
 
 ### Attention Mechanism- aka what makes the Transformer (The "T" in ChatGPT) powerful
 
-- [Attention High level overview video](https://www.youtube.com/watch?v=fjJOgb-E41w)
+* [Attention High level overview video](https://www.youtube.com/watch?v=fjJOgb-E41w)
 
-- [Attention Is All You Need Arxiv Paper](https://arxiv.org/abs/1706.03762)
+* [Attention Is All You Need Arxiv Paper](https://arxiv.org/abs/1706.03762)
 
 The Attention mechanism equation is:
 
 $$
-\\text{Attention}(Q, K, V) = \\text{softmax}\\left( \\frac{QK^T}{\\sqrt{d_k}} \\right) V
+\text{Attention}(Q, K, V) = \text{softmax}\left( \frac{QK^T}{\sqrt{d\_k}} \right) V
 $$
 
 Where:
 
-- $Q$ represents the Query matrix
-- $K$ represents the Key matrix
-- $V$ represents the Value matrix
-- $d_k$ is the dimension of the key vectors
-- $\\text{softmax}(\\cdot)$ normalizes scores to sum to 1
+* $Q$ represents the Query matrix
+* $K$ represents the Key matrix
+* $V$ represents the Value matrix
+* $d\_k$ is the dimension of the key vectors
+* $\text{softmax}(\cdot)$ normalizes scores to sum to 1
 
 ### Q: Do I have to buy a Linux computer to use this? I don't have time for that!
 
 ### A: No. You can run Linux and/or the tools we share alongside your existing operating system:
 
-- Windows users can use Windows Subsystem for Linux [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
-- Mac users can use [Homebrew](https://brew.sh/)
-- The code-base instructions were developed with both beginners and advanced users in mind.
+* Windows users can use Windows Subsystem for Linux [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+* Mac users can use [Homebrew](https://brew.sh/)
+* The code-base instructions were developed with both beginners and advanced users in mind.
 
 ### Q: Do you have to get a masters in AI?
 
 ### A: Not if you don't want to. To get competent enough to get past ChatGPT dependence at least, you just need a computer and a beginning's mindset. Huggingface is a good place to start.
 
-- [Huggingface](https://docs.google.com/presentation/d/1IkzESdOwdmwvPxIELYJi8--K3EZ98_cL6c5ZcLKSyVg/edit#slide=id.p)
+* [Huggingface](https://docs.google.com/presentation/d/1IkzESdOwdmwvPxIELYJi8--K3EZ98_cL6c5ZcLKSyVg/edit#slide=id.p)
 
 ### Q: What makes a "small" AI model?
 
@@ -233,30 +380,30 @@ Where:
 
 ### Protection for Vulnerable Populations
 
-The dual licensing aims to address the cybersecurity gap that disproportionately affects underserved populations. As highlighted by recent attacks<sup><a href="#ref1">[1]</a></sup>, low-income residents, seniors, and foreign language speakers face higher-than-average risks of being victims of cyberattacks. By offering both open-source and commercial licensing options, we encourage the development of cybersecurity solutions that can reach these vulnerable groups while also enabling sustainable development and support.
+The dual licensing aims to address the cybersecurity gap that disproportionately affects underserved populations. As highlighted by recent attacks<sup><a href="#ref1">\[1]</a></sup>, low-income residents, seniors, and foreign language speakers face higher-than-average risks of being victims of cyberattacks. By offering both open-source and commercial licensing options, we encourage the development of cybersecurity solutions that can reach these vulnerable groups while also enabling sustainable development and support.
 
 ### Preventing Malicious Use
 
-The AGPL-3.0 license ensures that any modifications to the software remain open source, preventing bad actors from creating closed-source variants that could be used for exploitation. This is especially crucial given the rising threats to vulnerable communities, including children in educational settings. The attack on Minneapolis Public Schools, which resulted in the leak of 300,000 files and a $1 million ransom demand, highlights the importance of transparency and security<sup><a href="#ref8">[8]</a></sup>.
+The AGPL-3.0 license ensures that any modifications to the software remain open source, preventing bad actors from creating closed-source variants that could be used for exploitation. This is especially crucial given the rising threats to vulnerable communities, including children in educational settings. The attack on Minneapolis Public Schools, which resulted in the leak of 300,000 files and a $1 million ransom demand, highlights the importance of transparency and security<sup><a href="#ref8">\[8]</a></sup>.
 
 ### Addressing Cybersecurity in Critical Sectors
 
-The commercial license option allows for tailored solutions in critical sectors such as healthcare, which has seen significant impacts from cyberattacks. For example, the recent Change Healthcare attack<sup><a href="#ref4">[4]</a></sup> affected millions of Americans and caused widespread disruption for hospitals and other providers. In January 2025, CISA<sup><a href="#ref2">[2]</a></sup> and FDA<sup><a href="#ref3">[3]</a></sup> jointly warned of critical backdoor vulnerabilities in Contec CMS8000 patient monitors, revealing how medical devices could be compromised for unauthorized remote access and patient data manipulation.
+The commercial license option allows for tailored solutions in critical sectors such as healthcare, which has seen significant impacts from cyberattacks. For example, the recent Change Healthcare attack<sup><a href="#ref4">\[4]</a></sup> affected millions of Americans and caused widespread disruption for hospitals and other providers. In January 2025, CISA<sup><a href="#ref2">\[2]</a></sup> and FDA<sup><a href="#ref3">\[3]</a></sup> jointly warned of critical backdoor vulnerabilities in Contec CMS8000 patient monitors, revealing how medical devices could be compromised for unauthorized remote access and patient data manipulation.
 
 ### Supporting Cybersecurity Awareness
 
-The dual licensing model supports initiatives like the Cybersecurity and Infrastructure Security Agency (CISA) efforts to improve cybersecurity awareness<sup><a href="#ref7">[7]</a></sup> in "target rich" sectors, including K-12 education<sup><a href="#ref5">[5]</a></sup>. By allowing both open-source and commercial use, we aim to facilitate the development of tools that support these critical awareness and protection efforts.
+The dual licensing model supports initiatives like the Cybersecurity and Infrastructure Security Agency (CISA) efforts to improve cybersecurity awareness<sup><a href="#ref7">\[7]</a></sup> in "target rich" sectors, including K-12 education<sup><a href="#ref5">\[5]</a></sup>. By allowing both open-source and commercial use, we aim to facilitate the development of tools that support these critical awareness and protection efforts.
 
 ### Bridging the Digital Divide
 
-The unfortunate reality is that too many individuals and organizations have gone into a frenzy in every facet of our daily lives<sup><a href="#ref6">[6]</a></sup>. These unfortunate folks identify themselves with their talk of "10X" returns and building towards Artificial General Intelligence aka "AGI" while offering GPT wrappers. Our dual licensing approach aims to acknowledge this deeply concerning predatory paradigm with clear eyes while still operating to bring the best parts of the open-source community with our services and solutions.
+The unfortunate reality is that too many individuals and organizations have gone into a frenzy in every facet of our daily lives<sup><a href="#ref6">\[6]</a></sup>. These unfortunate folks identify themselves with their talk of "10X" returns and building towards Artificial General Intelligence aka "AGI" while offering GPT wrappers. Our dual licensing approach aims to acknowledge this deeply concerning predatory paradigm with clear eyes while still operating to bring the best parts of the open-source community with our services and solutions.
 
 ### Recent Cybersecurity Attacks
 
 Recent attacks underscore the importance of robust cybersecurity measures:
 
-- The Change Healthcare cyberattack in February 2024 affected millions of Americans and caused significant disruption to healthcare providers.
-- The White House and Congress jointly designated October 2024 as Cybersecurity Awareness Month. This designation comes with over 100 actions that align the Federal government and public/private sector partners are taking to help every man, woman, and child to safely navigate the age of AI.
+* The Change Healthcare cyberattack in February 2024 affected millions of Americans and caused significant disruption to healthcare providers.
+* The White House and Congress jointly designated October 2024 as Cybersecurity Awareness Month. This designation comes with over 100 actions that align the Federal government and public/private sector partners are taking to help every man, woman, and child to safely navigate the age of AI.
 
 By offering both open source and commercial licensing options, we strive to create a balance that promotes innovation and accessibility. We address the complex cybersecurity challenges faced by vulnerable populations and critical infrastructure sectors as the foundation of our solutions, not an afterthought.
 
