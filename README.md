@@ -9,6 +9,8 @@
 
 ![Repository Views](https://komarev.com/ghpvc/?username=qompassai-go)
 ![GitHub all releases](https://img.shields.io/github/downloads/qompassai/go/total?style=flat-square)
+
+<p align="center">
   <a href="https://go.dev/">
   <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go">
 </a>
@@ -127,7 +129,6 @@ if [ -n "$MISSING" ]; then
 fi
 if ! command_exists gvm; then
   print_info "GVM not found. Installing GVM for per-user Go versioning..."
-  # POSIX shell doesn't support process substitution.
   curl -sSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer -o /tmp/gvm-installer.sh
   sh /tmp/gvm-installer.sh
   rm -f /tmp/gvm-installer.sh
@@ -276,7 +277,7 @@ exit 0
 **Monero (XMR):**
 
 <div align="center">
-  <img src="https://www.github.com/qompassai/svg/assets/monero-qr.svg" alt="Monero QR Code" width="180">
+<img src="https://raw.githubusercontent.com/qompassai/svg/main/assets/monero-qr.svg" alt="Monero QR Code" width="180">
 </div>
 
 <div style="margin: 10px 0;">

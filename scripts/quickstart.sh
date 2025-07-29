@@ -68,7 +68,6 @@ if [ -n "$MISSING" ]; then
 fi
 if ! command_exists gvm; then
     print_info "GVM not found. Installing GVM for per-user Go versioning..."
-    # POSIX shell doesn't support process substitution.
     curl -sSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer -o /tmp/gvm-installer.sh
     sh /tmp/gvm-installer.sh
     rm -f /tmp/gvm-installer.sh
